@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Helpdesksystem.Models;
+namespace HelpDeskSystem.Models;
 
 [Table("Employees")]
 public class Employee
