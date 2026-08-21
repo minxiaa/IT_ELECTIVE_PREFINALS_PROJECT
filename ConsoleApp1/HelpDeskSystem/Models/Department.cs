@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Helpdesksystem.Models;
+namespace HelpDeskSystem.Models;
 
 [Table("Departments")]
 public class Department
@@ -14,6 +14,7 @@ public class Department
 
     public string? Description { get; set; }
 
+    [Required]
     public bool IsActive { get; set; } = true;
     public ICollection<Employee> Employees { get; set; } = new List<Employee>();
 }
