@@ -1,5 +1,6 @@
 ﻿using Helpdesksystem.Models.ViewModels;
 using HelpDeskSystem.Data;
+using HelpDeskSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,5 +46,21 @@ public class ReportsController : Controller
             .ToListAsync();
 
         return View(workload);
+    }
+
+    public async Task<IActionResult> MultipleAssigneeTickets()
+    {
+        var tickets = await _context.Tickets
+            .Include(t => t.Assignments)
+                .ThenInclude(a => a.Employee)
+            .Where(t => t.Assignments.Count > 1)
+            .ToListAsync();
+
+        return View(tickets);
+    }
+
+    public IActionResult PrimaryAssignee()
+    {
+        return View();
     }
 }
