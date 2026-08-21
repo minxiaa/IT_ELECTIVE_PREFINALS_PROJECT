@@ -1,28 +1,25 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using HelpDeskSystem.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
-namespace Helpdesksystem.Models;
-
-[Table("Employees")]
-public class Employee
+namespace HelpDeskSystem.Controllers
 {
-    [Key]
-    public int Id { get; set; }
+    public class HomeController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    [Required]
-    public string FullName { get; set; } = string.Empty;
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
-    [Required]
-    [EmailAddress]
-    public string Email { get; set; } = string.Empty;
-
-    public string? JobTitle { get; set; }
-
-    [Required]
-    public int DepartmentId { get; set; }
-
-    public bool IsActive { get; set; } = true;
-
-    [ForeignKey(nameof(DepartmentId))]
-    public Department Department { get; set; } = null!;
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
 }
