@@ -26,3 +26,11 @@ public class Employee
     [ForeignKey(nameof(DepartmentId))]
     public Department Department { get; set; } = null!;
 }
+
+[Table("TicketTags")]
+public class TicketTag
+{
+    public int TicketId { get; set; }
+
+    public int TagId { get; set; }
+}
