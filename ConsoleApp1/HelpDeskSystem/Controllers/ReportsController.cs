@@ -1,9 +1,9 @@
-﻿using Helpdesksystem.Models.ViewModels;
-using HelpDeskSystem.Data;
+﻿using HelpDeskSystem.Data;
+using HelpDeskSystem.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Helpdesksystem.Controllers;
+namespace HelpDeskSystem.Controllers;
 
 public class ReportsController : Controller
 {

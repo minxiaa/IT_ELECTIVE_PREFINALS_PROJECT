@@ -10,6 +10,7 @@
     <thead>
         <tr>
             <th>Ticket Title</th>
+            <th>Description</th>
             <th>Primary Assignee</th>
         </tr>
     </thead>
@@ -20,7 +21,8 @@
             {
                 <tr>
                     <td>@item.Title</td>
-                    <td>@item.PrimaryAssignee?.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.TicketAssignees.FirstOrDefault()?.Employee?.FullName</td>
                 </tr>
             }
         }

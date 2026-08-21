@@ -26,7 +26,7 @@ namespace HelpDeskSystem.Models
         public int StatusId { get; set; }
 
         [Required]
-        public string Subject { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
 
         [Required]
         public string Description { get; set; } = string.Empty;
@@ -58,7 +58,7 @@ namespace HelpDeskSystem.Models
         [ForeignKey(nameof(StatusId))]
         public TicketStatus? Status { get; set; }
 
-        public ICollection<TicketAssignment> Assignments { get; set; }
+        public ICollection<TicketAssignment> TicketAssignees { get; set; }
             = new List<TicketAssignment>();
 
         public ICollection<TicketAttachment> Attachments { get; set; }

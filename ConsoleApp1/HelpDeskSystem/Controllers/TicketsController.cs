@@ -26,7 +26,7 @@ namespace HelpDeskSystem.Controllers
             if (!string.IsNullOrEmpty(search))
             {
                 ticketsQuery = ticketsQuery.Where(t =>
-                    t.Subject.Contains(search) ||
+                    t.Title.Contains(search) ||
                     t.Id.ToString().Contains(search));
             }
 
@@ -42,7 +42,7 @@ namespace HelpDeskSystem.Controllers
                 .Include(t => t.Category)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
-                .Include(t => t.Assignments).ThenInclude(a => a.Employee)
+                .Include(t => t.TicketAssignees).ThenInclude(a => a.Employee)
                 .Include(t => t.Attachments)
                 .Include(t => t.Comments)
                 .Include(t => t.Tags).ThenInclude(tt => tt.Tag);
@@ -73,7 +73,7 @@ namespace HelpDeskSystem.Controllers
                 .Include(t => t.Category)
                 .Include(t => t.Priority)
                 .Include(t => t.Status)
-                .Where(t => !t.Assignments.Any());
+                .Where(t => !t.TicketAssignees.Any());
 
             var unassigned = await unassignedQuery.ToListAsync();
             return View(unassigned);

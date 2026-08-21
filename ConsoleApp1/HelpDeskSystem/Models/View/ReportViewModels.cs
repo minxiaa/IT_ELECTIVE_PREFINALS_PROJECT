@@ -1,4 +1,4 @@
-﻿namespace Helpdesksystem.Models.ViewModels;
+﻿namespace HelpDeskSystem.Models.ViewModels;
 
 public class EmployeeWorkloadViewModel
 {
