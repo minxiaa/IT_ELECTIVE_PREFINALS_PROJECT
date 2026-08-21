@@ -1,7 +1,7 @@
 ﻿using HelpDeskSystem.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HelpDeskApp.Models;
+namespace HelpDeskSystem.Models;
 
 [Table("TicketTags")]
 public class TicketTag
