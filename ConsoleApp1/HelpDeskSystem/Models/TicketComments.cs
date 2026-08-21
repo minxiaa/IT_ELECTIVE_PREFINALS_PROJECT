@@ -19,7 +19,7 @@ public class TicketComment
     public string Comment { get; set; } = string.Empty;
 
     [Required]
-    public DateTime CreatedAt { get; set; }
+    public string CreatedAt { get; set; } = string.Empty;
 
     [Required]
     public bool IsInternal { get; set; } = false;
