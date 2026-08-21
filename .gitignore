@@ -57,3 +57,5 @@ TestResult.xml
 nunit-*.xml
 /.idea/
 /ConsoleApp1/.vs/ConsoleApp1
+/ConsoleApp1/HelpDeskSystem/Models/TicketCategories.cs
+/ConsoleApp1/HelpDeskSystem/Models/Tickets.cs
