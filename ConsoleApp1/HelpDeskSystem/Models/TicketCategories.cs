@@ -26,7 +26,4 @@ public class TicketCategory
     public ICollection<TicketCategory> Children { get; set; }
         = new List<TicketCategory>();
 
- 
-    public ICollection<Ticket> Tickets { get; set; }
-        = new List<Ticket>();
 }
