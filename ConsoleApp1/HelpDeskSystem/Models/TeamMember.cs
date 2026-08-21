@@ -1,12 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HelpDeskSystem.Models;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HelpDeskSystem.Models
 {
     [Table("TeamMembers")]
+    [PrimaryKey(nameof(TeamId), nameof(EmployeeId))]
     public class TeamMember
     {
         public int TeamId { get; set; }
+
         public int EmployeeId { get; set; }
 
         [Required]
