@@ -1,25 +1,14 @@
-using HelpDeskSystem.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HelpDeskSystem.Controllers
+namespace Helpdesksystem.Models;
+
+[Table("TicketTags")]
+public class TicketTag
 {
-    public class HomeController : Controller
-    {
-        public IActionResult Index()
-        {
-            return View();
-        }
+    public int TicketId { get; set; }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+    public int TagId { get; set; }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+    [ForeignKey(nameof(TagId))]
+    public Tag Tag { get; set; } = null!;
 }
