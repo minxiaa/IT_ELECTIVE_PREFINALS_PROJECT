@@ -14,7 +14,7 @@ namespace HelpDeskSystem.Controllers
             _context = context;
         }
 
-       
+
         public async Task<IActionResult> Index(string search)
         {
             IQueryable<Ticket> ticketsQuery = _context.Tickets
@@ -26,7 +26,7 @@ namespace HelpDeskSystem.Controllers
             if (!string.IsNullOrEmpty(search))
             {
                 ticketsQuery = ticketsQuery.Where(t =>
-                    t.Title.Contains(search) ||
+                    t.Subject.Contains(search) ||
                     t.Id.ToString().Contains(search));
             }
 
@@ -54,7 +54,7 @@ namespace HelpDeskSystem.Controllers
             return View(ticket);
         }
 
-  
+
         public async Task<IActionResult> CategoryHierarchy()
         {
             var categoriesQuery = _context.TicketCategories
@@ -66,7 +66,7 @@ namespace HelpDeskSystem.Controllers
             return View(categories);
         }
 
-      
+
         public async Task<IActionResult> UnassignedTickets()
         {
             var unassignedQuery = _context.Tickets
@@ -80,3 +80,4 @@ namespace HelpDeskSystem.Controllers
         }
     }
 }
+
