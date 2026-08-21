@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HelpDeskSystem.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace HelpDeskSystem;
+namespace HelpDeskSystem.Models;
 
 [Table("TicketCategories")]
 public class TicketCategory
@@ -25,5 +26,9 @@ public class TicketCategory
   
     public ICollection<TicketCategory> Children { get; set; }
         = new List<TicketCategory>();
+
+    public ICollection<Ticket> Tickets { get; set; }
+    = new List<Ticket>();
+
 
 }
