@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace YourProject.Models
+namespace HelpDeskSystem.Models
 {
     [Table("TicketAssignments")]
     [PrimaryKey(nameof(TicketId), nameof(EmployeeId))]
     public class TicketAssignment
     {
+      
+
         [Required]
         public int TicketId { get; set; }
 
@@ -15,18 +18,18 @@ namespace YourProject.Models
         public int EmployeeId { get; set; }
 
         [Required]
-        public DateTime AssignedAt { get; set; }
+        public string AssignedAt { get; set; } = string.Empty;
 
-        public DateTime? UnassignedAt { get; set; }
+        public string? UnassignedAt { get; set; }
 
         [Required]
         public bool IsPrimary { get; set; }
 
-
+        
         [ForeignKey(nameof(TicketId))]
-        public Ticket? Ticket { get; set; }
+        public Ticket Ticket { get; set; } = null!;
 
         [ForeignKey(nameof(EmployeeId))]
-        public Employee? Employee { get; set; }
+        public Employee Employee { get; set; } = null!;
     }
 }
