@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HelpDeskSystem.Models.Ticket>
+
+@{
+    ViewData["Title"] = "Multiple Assignee Tickets Report";
+}
+
+<h2>Multiple Assignee Tickets Report</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ticket Title</th>
+            <th>Description</th>
+            <th>Assignees Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.TicketAssignees?.Count()</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
