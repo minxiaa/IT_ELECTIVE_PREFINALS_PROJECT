@@ -28,6 +28,10 @@ public class Employee
     [Required]
     public int DepartmentId { get; set; }
 
+    [Required]
+    public string HireDate { get; set; } = string.Empty;
+
+
     public bool IsActive { get; set; } = true;
 
     [ForeignKey(nameof(DepartmentId))]
