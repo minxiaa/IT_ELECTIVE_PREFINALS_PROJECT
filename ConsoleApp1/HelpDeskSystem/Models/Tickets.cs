@@ -67,5 +67,9 @@ namespace HelpDeskSystem.Models
         public ICollection<TicketComment> Comments { get; set; }
             = new List<TicketComment>();
 
+        public ICollection<TicketTag> Tags { get; set; }
+            = new List<TicketTag>();
+
+
     }
 }
