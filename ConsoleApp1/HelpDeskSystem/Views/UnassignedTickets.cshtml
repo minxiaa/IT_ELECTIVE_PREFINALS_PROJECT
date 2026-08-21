@@ -1,0 +1,26 @@
+﻿<h2>Unassigned Tickets Report</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Subject</th>
+            <th>Customer</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.Id</td>
+                <td>@ticket.Subject</td>
+                <td>@ticket.CustomerId</td>
+                <td>@ticket.CategoryId</td>
+                <td>@ticket.PriorityId</td>
+                <td>@ticket.StatusId</td>
+            </tr>
+        }
+    </tbody>
+</table>
