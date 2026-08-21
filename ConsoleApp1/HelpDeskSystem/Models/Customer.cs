@@ -23,6 +23,7 @@ namespace HelpDeskSystem.Models
         [Required]
         public string CreatedAt { get; set; } = string.Empty;
 
+        [Required]
         public int IsActive { get; set; } = 1;
     }
 }
