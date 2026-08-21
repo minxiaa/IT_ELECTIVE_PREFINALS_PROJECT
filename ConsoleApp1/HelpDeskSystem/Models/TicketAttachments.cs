@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HelpDeskSystem.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -17,11 +18,14 @@ public class TicketAttachment
     public string FileName { get; set; } = string.Empty;
 
     [Required]
-    public string FilePath { get; set; } = string.Empty;
+    public string ContentType { get; set; } = string.Empty;
 
     [Required]
-    public DateTime UploadedAt { get; set; }
+    public int FileSize { get; set; }
+
+    [Required]
+    public string UploadedAt { get; set; } = string.Empty;
 
     [ForeignKey(nameof(TicketId))]
-    public Ticket? Ticket { get; set; }
+    public Ticket Ticket { get; set; } = null!;
 }
