@@ -21,9 +21,9 @@
                 <tr>
                     <td>@ticket.Subject</td>
                     <td>
-                        @if (ticket.Assignments != null && ticket.Assignments.Any())
+                        @if (ticket.TicketAssignees != null && ticket.TicketAssignees.Any())
                         {
-                            @foreach (var assign in ticket.Assignments)
+                            @foreach (var assign in ticket.TicketAssignees)
                             {
                                 <span>@assign.Employee?.FullName</span>
                 

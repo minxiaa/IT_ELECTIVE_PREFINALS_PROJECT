@@ -21,7 +21,7 @@
                 <td>@item.Subject</td> <!-- Pinalitan mula sa item.Title patungong item.Subject -->
                 <td>@item.Description</td>
                 <td>
-                    @foreach (var assign in item.Assignments)
+                    @foreach (var assign in item.TicketAssignees)
                     {
                         <span>@assign.Employee?.FullName</span>
                 
