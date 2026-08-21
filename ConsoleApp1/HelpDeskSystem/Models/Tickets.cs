@@ -26,7 +26,7 @@ namespace HelpDeskSystem.Models
         public int StatusId { get; set; }
 
         [Required]
-        public string Title { get; set; } = string.Empty;
+        public string Subject { get; set; } = string.Empty;
 
         [Required]
         public string Description { get; set; } = string.Empty;
@@ -44,7 +44,7 @@ namespace HelpDeskSystem.Models
         public string? ClosedAt { get; set; }
 
 
-     
+
 
         [ForeignKey(nameof(CustomerId))]
         public Customer? Customer { get; set; }
@@ -73,3 +73,5 @@ namespace HelpDeskSystem.Models
 
     }
 }
+
+
