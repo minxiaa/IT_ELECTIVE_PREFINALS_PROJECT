@@ -4,22 +4,43 @@
     ViewData["Title"] = "Teams List";
 }
 
-<h2>Teams List</h2>
+<div class="container my-4 pb-5">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold text-dark mb-1">Teams List</h2>
+            <p class="text-muted mb-0">Listahan ng lahat ng support teams at kanilang mga departamento.</p>
+        </div>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Team Name</th>
-            <th>Department</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.Department?.Name</td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <!-- Table Card -->
+    <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr class="text-uppercase text-secondary fs-7 fw-semibold">
+                            <th class="py-3 ps-4">Team Name</th>
+                            <th class="py-3">Department</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="py-3 ps-4 fw-bold text-primary">
+                                    @item.Name
+                                </td>
+                                <td class="py-3">
+                                    <span class="badge bg-light text-dark border fw-normal px-2 py-1">
+                                        @(item.Department != null ? item.Department.Name : "N/A")
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

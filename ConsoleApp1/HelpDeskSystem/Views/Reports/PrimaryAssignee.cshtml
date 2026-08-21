@@ -16,11 +16,25 @@
     <tbody>
         @if (Model != null)
         {
-            @foreach (var item in Model)
+            @foreach (var ticket in Model)
             {
                 <tr>
-                    <td>@item.Title</td>
-                    <td>@item.PrimaryAssignee?.Name</td>
+                    <td>@ticket.Subject</td>
+                    <td>
+                        @if (ticket.Assignments != null && ticket.Assignments.Any())
+                        {
+                            @foreach (var assign in ticket.Assignments)
+                            {
+                                <span>@assign.Employee?.FullName</span>
+                
+                                <br />
+                            }
+                        }
+                        else
+                        {
+                            <span>No Assignee</span>
+                        }
+                    </td>
                 </tr>
             }
         }

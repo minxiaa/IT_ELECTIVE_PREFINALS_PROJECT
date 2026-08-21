@@ -25,9 +25,9 @@ public class ReportsController : Controller
             .Where(e => e.IsActive)
             .Select(e => new EmployeeWorkloadViewModel
             {
-                EmployeeName = e.FullName,
-                DepartmentName = e.Department.Name,
-                UnresolvedTicketCount = 0 
+                EmployeeName = e.FirstName + " " + e.LastName,
+                DepartmentName = e.Department != null ? e.Department.Name : "N/A",
+                AssignedTicketCount = 0
             })
             .ToListAsync();
 
@@ -40,8 +40,7 @@ public class ReportsController : Controller
             .Select(d => new DepartmentWorkloadViewModel
             {
                 DepartmentName = d.Name,
-                EmployeeCount = d.Employees.Count,
-                UnresolvedTicketCount = 0 
+                TicketCount = d.Employees.Count
             })
             .ToListAsync();
 
