@@ -1,0 +1,20 @@
+﻿@model IEnumerable<HelpDeskSystem.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h2 class="mb-4">Employees</h2>
+
+@foreach (var item in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h4 class="card-title text-primary">@item.FullName</h4>
+            <p class="mb-1"><strong>Email:</strong> @item.Email</p>
+            <p class="mb-1"><strong>Job Title:</strong> @(item.JobTitle ?? "N/A")</p>
+            <p class="mb-1"><strong>Department:</strong> @item.Department?.Name</p>
+            <p class="mb-0"><strong>Status:</strong> @(item.IsActive ? "Active" : "Inactive")</p>
+        </div>
+    </div>
+}
