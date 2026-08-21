@@ -1,0 +1,11 @@
+﻿<h2>Category Hierarchy Report</h2>
+@foreach (var category in Model)
+{
+    <h3>@category.Name</h3>
+    <ul>
+        @foreach (var ticket in category.Tickets)
+        {
+            <li>@ticket.Subject (Status: @ticket.StatusId)</li>
+        }
+    </ul>
+}
