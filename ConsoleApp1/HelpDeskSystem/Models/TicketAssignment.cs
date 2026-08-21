@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,7 +8,7 @@ namespace HelpDeskSystem.Models
     [PrimaryKey(nameof(TicketId), nameof(EmployeeId))]
     public class TicketAssignment
     {
-      
+
 
         [Required]
         public int TicketId { get; set; }
@@ -25,11 +24,14 @@ namespace HelpDeskSystem.Models
         [Required]
         public bool IsPrimary { get; set; }
 
-        
+
         [ForeignKey(nameof(TicketId))]
         public Ticket Ticket { get; set; } = null!;
 
         [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get; set; } = null!;
+
+
     }
 }
+
