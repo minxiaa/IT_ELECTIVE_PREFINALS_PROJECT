@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "System Reports";
+}
+
+<h2 class="mb-4">Help Desk Reports</h2>
+
+<div class="card mb-3 col-md-6">
+    <div class="card-body">
+        <h4>Employee Workload</h4>
+        <p>View all active employees, their department, and their total unresolved tickets.</p>
+        <a asp-action="EmployeeWorkload" class="btn btn-primary">Open Report</a>
+    </div>
+</div>
+
+<div class="card mb-3 col-md-6">
+    <div class="card-body">
+        <h4>Department Workload</h4>
+        <p>View departments with total employee count and unresolved ticket counts.</p>
+        <a asp-action="DepartmentWorkload" class="btn btn-primary">Open Report</a>
+    </div>
+</div>
