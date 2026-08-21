@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HelpDeskSystem.Models.Team>
+
+@{
+    ViewData["Title"] = "Teams List";
+}
+
+<h2>Teams List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Department?.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
