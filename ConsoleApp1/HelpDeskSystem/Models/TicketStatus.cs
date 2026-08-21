@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HelpDeskSystem.Models;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace HelpDeskSystem.Models
 {
@@ -9,5 +11,8 @@ namespace HelpDeskSystem.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public int IsClosed { get; set; } = 0;
     }
 }
