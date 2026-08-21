@@ -32,16 +32,16 @@ namespace HelpDeskSystem.Models
         public string Description { get; set; } = string.Empty;
 
         [Required]
-        public DateTime CreatedAt { get; set; }
+        public string CreatedAt { get; set; } = string.Empty;
 
         [Required]
-        public DateTime UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; } = string.Empty;
 
-        public DateTime? DueAt { get; set; }
+        public string? DueAt { get; set; }
 
-        public DateTime? ResolvedAt { get; set; }
+        public string? ResolvedAt { get; set; }
 
-        public DateTime? ClosedAt { get; set; }
+        public string? ClosedAt { get; set; }
 
 
      
