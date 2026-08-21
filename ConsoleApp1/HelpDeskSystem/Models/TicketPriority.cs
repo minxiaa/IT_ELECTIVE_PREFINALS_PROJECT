@@ -12,8 +12,10 @@ namespace HelpDeskSystem.Models
         [Required]
         public string Name { get; set; } = string.Empty;
 
+        [Required]
         public int SortOrder { get; set; }
 
+        [Required]
         public int ResponseHours { get; set; }
     }
 }
